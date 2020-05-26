@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.tetra.eos.mysql.mapper.common.CommonMapper">
+
+        
+    <select id="selectNow" resultType="HashMap">
+    	<![CDATA[
+        	select DATE_FORMAT(Now(), '%Y%m%d %H:%i:%s') nowdt
+         ]]>    
+    </select>
+    
+    
+	<insert id="insertTbTemp1" parameterType="hashMap"  > 
+	<![CDATA[
+		insert into TB_TEMP1 ( col1,col2 ) values ( #{col1} , #{col2} ) 
+		 ]]>  
+	</insert>
+
+	<insert id="insertTbTemp2" parameterType="hashMap"  > 
+	<![CDATA[
+		insert into TB_TEMP2 ( col1,col2 ) values ( #{col1} , #{col2} ) 
+		 ]]>  
+	</insert>
+
+
+    
+</mapper>
